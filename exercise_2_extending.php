@@ -7,6 +7,7 @@ ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
 
+
 /* EXERCISE 2
 Make class beer that extends from Beverage.
 Create the properties name (string) and alcoholpercentage (float).
@@ -21,6 +22,33 @@ Try to get this error on the screen= Fatal error: Uncaught Error: Call to undefi
 USE TYPEHINTING EVERYWHERE!
 */
 
+class Beverage
+{
+    public string $color;
+    public float $price;
+    public string $temperature;
+
+    function __construct($color, $price, $temperature = "cold")
+    {
+        $this->color = $color;
+        $this->price = $price;
+        $this->temperature = $temperature;
+    }
+
+    function getInfo()
+    {
+        echo "This beverage is {$this->temperature} and {$this->color}.";
+    }
+}
+
+//$cola = new Beverage("black", 2);
+//
+//$cola->getInfo();
+//
+//echo "<br>";
+//echo $cola->temperature;
+
+
 class Beer extends Beverage
 {
     protected string $name;
@@ -33,8 +61,20 @@ class Beer extends Beverage
         parent::__construct($color, $price, $temperature);
     }
 
-//    public function getAlcoholpercentage()
-//    {
-//        echo $this->alcoholpercentage;
-//    }
+    public function getAlcoholpercentage()
+    {
+        echo $this->alcoholpercentage;
+    }
 }
+
+$Duvel = new Beer("Duvel", 8.5, "blond", 3.5);
+
+echo $Duvel->temperature;
+echo "<br>";
+$Duvel->getAlcoholpercentage();
+echo "<br>";
+echo $Duvel->alcoholpercentage;
+echo "<br>";
+echo $Duvel->color;
+echo "<br>";
+echo $Duvel->getInfo();

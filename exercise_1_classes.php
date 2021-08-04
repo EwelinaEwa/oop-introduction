@@ -38,3 +38,9 @@ class Beverage
     }
 }
 
+$cola = new Beverage("black", 2);
+
+$cola->getInfo();
+
+echo "<br>";
+echo $cola->temperature;
