@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
+
+
 /* EXERCISE 1
 Create a class beverage.
 Create the properties color (string), price (float) and temperature (string) and also foresee a construct.
@@ -13,3 +18,28 @@ Instantiate an object which represents cola. Make sure that the color is set to 
 print the temperature on the screen.
 USE TYPEHINTING EVERYWHERE!
 */
+
+class Beverage
+{
+    public string $color;
+    public float $price;
+    public string $temperature;
+
+    function __construct($color, $price, $temperature = "cold")
+    {
+        $this->color = $color;
+        $this->price = $price;
+        $this->temperature = $temperature;
+    }
+
+    function getInfo()
+    {
+        echo "This beverage is {$this->temperature} and {$this->color}.";
+    }
+}
+
+$cola = new Beverage("black", 2);
+
+$cola->getInfo();
+
+echo "<br>" . $cola->temperature;
