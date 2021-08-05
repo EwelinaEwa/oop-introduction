@@ -47,11 +47,6 @@ class Beverage
         $this->color = $color;
     }
 
-    public function getPrice()
-    {
-        return $this->price;
-    }
-
     public function getTemperature()
     {
         return $this->temperature;
@@ -77,19 +72,9 @@ class Beer extends Beverage
         return $this->name;
     }
 
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
     public function getAlcoholpercentage()
     {
         return $this->alcoholpercentage;
-    }
-
-    public function setAlcoholpercentage($alcoholpercentage)
-    {
-        $this->alcoholpercentage = $alcoholpercentage;
     }
 
     private function beerInfo($name, $alcoholpercentage, $color)
